@@ -14,6 +14,9 @@ response = requests.get(BASE_URL, headers=HEADERS)
 furbo = response.text
 
 soup = BeautifulSoup(furbo, 'html.parser')
+price_span = soup.find(name='span', class_='a-offscreen')
+print(price_span.getText())
+
 
 
 
